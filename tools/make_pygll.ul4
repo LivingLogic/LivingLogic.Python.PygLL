@@ -1,0 +1,100 @@
+<?whitespace smart?>
+from pygments import token, style
+<?code light_luma = 0.3?>
+<?code dark_luma = 0.7?>
+<?code base = #000?>
+<?code keyword_dark = #087fc8.withluma(dark_luma)?>
+<?code keyword_light = #05f?>
+<?code string_dark = #a5c341.withluma(dark_luma)?>
+<?code string_light = #2b0?>
+<?code number = #c0c?>
+<?code date = #6ff?>
+<?code color_dark = #6ff.withluma(dark_luma)?>
+<?code color_light = #6ff.withluma(light_luma)?>
+<?code const = #f90?>
+<?code magic = #009?>
+<?code ipython_input = #0f0?>
+<?code ipython_output = #f00?>
+<?code xml_tag_dark = #f60.withluma(dark_luma)?>
+<?code xml_tag_light = #f60.withluma(light_luma).withsat(1.0)?>
+<?code xml_pi_dark = #0ff.withluma(dark_luma)?>
+<?code xml_pi_light = #0ff.withluma(light_luma).withsat(1.0)?>
+<?code xml_attr_light = color.mix(xml_tag_light, string_light).withluma(light_luma-0.1).withsat(0.5)?>
+<?code xml_attr_dark = color.mix(xml_tag_dark, string_dark).withluma(dark_luma+0.1).withsat(0.5)?>
+<?code keyword_reserved_dark = color.mix(keyword_dark, 3, xml_tag_dark).withluma(dark_luma)?>
+<?code keyword_reserved_light = color.mix(keyword_light, 3, xml_tag_light).withluma(light_luma).withsat(1.0)?>
+<?code xml_entref = #c0c?>
+
+
+<?render globals.templates.make_style(
+	name="LivingLogicLightStyle",
+	doc="The 'LivingLogic' style, light version",
+	background_color='#00000003',
+	highlight_color='#0f02',
+	line_number_color=base.withluma(light_luma+0.2),
+	line_number_background_color="transparent",
+	line_number_special_color=base.withluma(light_luma+0.1),
+	line_number_special_background_color="transparent",
+	styles=dict(
+		base=base.withluma(0.1),
+		prompt=base.withluma(light_luma+0.5),
+		output=base.withluma(light_luma+0.2),
+		error=color.css("#f00").withluma(light_luma),
+		comment=base.withluma(light_luma),
+		keyword=keyword_light,
+		keywordreserved=keyword_reserved_light,
+		number=number.withsat(1.0),
+		string=string_light,
+		stringfade=string_light.relluma(-0.4),
+		date=date.withluma(light_luma),
+		color=color_light,
+		const=const.withluma(light_luma).withsat(1.0),
+		docstring=color.mix(1, string_light, 3, base.withluma(light_luma)),
+		magic=color.mix(1, keyword_light, 2, base.withluma(0.1)),
+		xml_tag=xml_tag_light,
+		xml_attr=xml_attr_light,
+		xml_pi=xml_pi_light,
+		xml_entref=xml_entref.withluma(light_luma).withsat(1.0),
+		ipython_input=ipython_input.withluma(light_luma+0.2).withsat(1.0),
+		ipython_inputnum=ipython_input.withluma(light_luma).withsat(1.0),
+		ipython_output=ipython_output.withluma(light_luma+0.2).withsat(1.0),
+		ipython_outputnum=ipython_output.withluma(light_luma).withsat(1.0),
+	)
+)?>
+
+
+<?render globals.templates.make_style(
+	name="LivingLogicDarkStyle",
+	doc="The 'LivingLogic' style, dark version",
+	background_color="#ffffff03",
+	highlight_color="#030",
+	line_number_color=base.withluma(dark_luma-0.2),
+	line_number_background_color="transparent",
+	line_number_special_color=base.withluma(dark_luma-0.1),
+	line_number_special_background_color="transparent",
+	styles=dict(
+		base=base.withluma(0.9),
+		prompt=base.withluma(dark_luma-0.3),
+		output=base.withluma(dark_luma-0.1),
+		error=color.css("#f00").withluma(dark_luma),
+		comment=base.withluma(dark_luma),
+		keyword=keyword_dark.withluma(dark_luma),
+		keywordreserved=keyword_reserved_dark,
+		number=number.withluma(dark_luma),
+		string=string_dark,
+		stringfade=string_dark.relluma(0.5),
+		date=date.withluma(dark_luma),
+		color=color_dark,
+		const=const.withluma(dark_luma),
+		docstring=color.mix(1, string_dark, 3, base.withluma(dark_luma)),
+		magic=color.mix(1, keyword_dark, 2, base.withluma(0.9)),
+		xml_tag=xml_tag_dark,
+		xml_attr=xml_attr_dark,
+		xml_pi=xml_pi_dark,
+		xml_entref=xml_entref.withluma(dark_luma),
+		ipython_input=ipython_input.withluma(dark_luma-0.2),
+		ipython_inputnum=ipython_input.withluma(dark_luma),
+		ipython_output=ipython_output.withluma(dark_luma-0.2),
+		ipython_outputnum=ipython_output.withluma(dark_luma),
+	)
+)?>

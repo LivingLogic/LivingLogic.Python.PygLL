@@ -1,0 +1,72 @@
+<?ul4 make_style(
+	name,
+	doc,
+	background_color,
+	highlight_color,
+	line_number_color,
+	line_number_background_color,
+	line_number_special_color,
+	line_number_special_background_color,
+	styles,
+)?>
+<?whitespace smart?>
+class <?print name?>(style.Style):
+	"""
+	<?print doc?>
+	"""
+
+	# overall background color (``None`` means transparent)
+	background_color = <?print repr(str(background_color))?>
+
+	# highlight background color
+	highlight_color = <?print repr(str(highlight_color))?>
+
+	# line number font color
+	line_number_color = <?print repr(str(line_number_color))?>
+
+	# line number background color
+	line_number_background_color = <?print repr(str(line_number_background_color))?>
+
+	# special line number font color
+	line_number_special_color = <?print repr(str(line_number_special_color))?>
+
+	# special line number background color
+	line_number_special_background_color = <?print repr(str(line_number_special_background_color))?>
+
+	styles = {
+		token.Token:                <?print repr(str(styles.base))?>,
+		token.Generic.Output:       <?print repr(str(styles.output))?>,
+		token.Generic.Prompt:       <?print repr(str(styles.prompt))?>,
+		token.Generic.Error:        <?print repr(str(styles.error))?>,
+		token.Generic.Traceback:    <?print repr(str(styles.error))?>,
+		token.Comment:              <?print repr(str(styles.comment))?>,
+		token.Number:               <?print repr(str(styles.number))?>,
+		token.String:               <?print repr(str(styles.string))?>,
+		token.String.Doc:           <?print repr(str(styles.docstring))?>,
+		token.String.Interpol:      <?print repr(str(styles.stringfade))?>,
+		token.String.Delimiter:     <?print repr(str(styles.stringfade))?>,
+		token.String.Escape:        <?print repr(str(styles.stringfade))?>,
+		token.String.Affix:         <?print repr(str(styles.stringfade))?>,
+		token.Token.Literal.Date:   <?print repr(str(styles.date))?>,
+		token.Token.Literal.Color:  <?print repr(str(styles.color))?>,
+		token.Keyword:              <?print repr(str(styles.keyword))?>,
+		token.Keyword.Reserved:     <?print repr(str(styles.keywordreserved))?>,
+		token.Operator:             <?print repr(str(styles.keyword))?>,
+		token.Operator.Word:        <?print repr(str(styles.keyword))?>,
+		token.Keyword.Constant:     <?print repr(str(styles.const))?>,
+		token.Name:                 <?print repr(str(styles.base))?>,
+		token.Name.Class:           <?print repr(str(styles.base) + " bold")?>,
+		token.Name.Function:        <?print repr(str(styles.base) + " bold")?>,
+		token.Name.Namespace:       <?print repr(str(styles.base))?>,
+		token.Name.Builtin.Pseudo:  <?print repr(str(styles.magic))?>,
+		token.Name.Variable.Magic:  <?print repr(str(styles.magic))?>,
+		token.Name.Function.Magic:  <?print repr(str(styles.magic))?>,
+		token.Name.Tag:             <?print repr(str(styles.xml_tag))?>,
+		token.Name.Attribute:       <?print repr(str(styles.xml_attr))?>,
+		token.Name.Entity:          <?print repr(str(styles.xml_entref))?>,
+		token.Comment.Preproc:      <?print repr(str(styles.xml_pi))?>,
+		token.Token.Prompt:         <?print repr(str(styles.ipython_input))?>,
+		token.Token.PromptNum:      <?print repr(str(styles.ipython_inputnum))?>,
+		token.Token.OutPrompt:      <?print repr(str(styles.ipython_output))?>,
+		token.Token.OutPromptNum:   <?print repr(str(styles.ipython_outputnum))?>,
+	}
