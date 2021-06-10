@@ -15,7 +15,7 @@ DESCRIPTION = """
 Pygments style"""
 
 CLASSIFIERS = """
-Development Status :: 5 - Production/Stable
+Development Status :: 4 - Beta
 Environment :: Plugins
 Intended Audience :: Developers
 License :: OSI Approved :: MIT License
@@ -25,6 +25,7 @@ Programming Language :: Python :: 3 :: Only
 Programming Language :: Python :: 3
 Programming Language :: Python :: 3.8
 Programming Language :: Python :: 3.9
+Topic :: Software Development :: Documentation
 Topic :: Text Processing :: Filters
 Topic :: Utilities
 Topic :: Software Development :: Libraries :: Python Modules
