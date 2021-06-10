@@ -30,7 +30,7 @@ Topic :: Utilities
 Topic :: Software Development :: Libraries :: Python Modules
 """
 
-KEYWORDS = "syntax highlighting pygments style"
+KEYWORDS = "syntax highlighting, pygments style"
 
 try:
 	news = list(open("docs/NEWS.rst", "r", encoding="utf-8"))
