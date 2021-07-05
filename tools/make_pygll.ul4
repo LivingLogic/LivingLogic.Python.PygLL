@@ -1,65 +1,66 @@
 <?whitespace smart?>
+<?doc
+	Creates the Python source code for our Pygments styles.
+
+	This is done via this UL4 template, so that we can use proper color
+	arithmetic, but the user that installs the style doesn't require an
+	installation of UL4/XIST.
+?>
 from pygments import token, style
-<?code light_luma = 0.3?>
-<?code dark_luma = 0.7?>
+<?code make_dark_style = globals.templates.make_dark_style?>
+<?code make_light_style = globals.templates.make_light_style?>
 <?code base = #000?>
-<?code keyword_dark = #087fc8.withluma(dark_luma)?>
+<?code keyword_dark = #087fc8?>
 <?code keyword_light = #05f?>
-<?code string_dark = #a5c341.withluma(dark_luma)?>
-<?code string_light = #2b0?>
+<?code string_dark = #a5c341?>
+<?code string_light = #0a0?>
 <?code number = #c0c?>
 <?code date = #6ff?>
-<?code color_dark = #6ff.withluma(dark_luma)?>
-<?code color_light = #6ff.withluma(light_luma)?>
+<?code color_ = #6ff?>
 <?code const = #f90?>
 <?code magic = #009?>
 <?code ipython_input = #0f0?>
 <?code ipython_output = #f00?>
-<?code xml_tag_dark = #f60.withluma(dark_luma)?>
-<?code xml_tag_light = #f60.withluma(light_luma).withsat(1.0)?>
-<?code xml_pi_dark = #0ff.withluma(dark_luma)?>
-<?code xml_pi_light = #0ff.withluma(light_luma).withsat(1.0)?>
-<?code xml_attr_light = color.mix(xml_tag_light, string_light).withluma(light_luma-0.1).withsat(0.5)?>
-<?code xml_attr_dark = color.mix(xml_tag_dark, string_dark).withluma(dark_luma+0.1).withsat(0.5)?>
-<?code keyword_reserved_dark = color.mix(keyword_dark, 3, xml_tag_dark).withluma(dark_luma)?>
-<?code keyword_reserved_light = color.mix(keyword_light, 3, xml_tag_light).withluma(light_luma).withsat(1.0)?>
+<?code xml_tag = #f60?>
+<?code xml_pi = #0ff?>
+<?code xml_attr = color.mix(xml_tag, string)?>
+<?code keyword_reserved_dark = color.mix(keyword_dark, 3, xml_tag)?>
+<?code keyword_reserved_light = color.mix(keyword_light, 3, xml_tag)?>
 <?code xml_entref = #c0c?>
 
 
 <?render globals.templates.make_style(
 	name="LivingLogicLightStyle",
 	doc="The 'LivingLogic' style, light version",
-	background_color='#00000003',
-	highlight_color='#0f02',
-	line_number_color=base.withluma(light_luma+0.2),
+	background_color="#00000003",
+	highlight_color="#0f02",
+	line_number_color=make_light_style(base).rellum(0.2),
 	line_number_background_color="transparent",
-	line_number_special_color=base.withluma(light_luma+0.1),
+	line_number_special_color=make_light_style(base).rellum(0.1),
 	line_number_special_background_color="transparent",
-	styles=dict(
-		base=base.withluma(0.1),
-		prompt=base.withluma(light_luma+0.5),
-		output=base.withluma(light_luma+0.2),
-		error=color.css("#f00").withluma(light_luma),
-		comment=base.withluma(light_luma),
-		keyword=keyword_light,
-		keywordreserved=keyword_reserved_light,
-		number=number.withsat(1.0),
-		string=string_light,
-		stringfade=string_light.relluma(-0.4),
-		date=date.withluma(light_luma),
-		color=color_light,
-		const=const.withluma(light_luma).withsat(1.0),
-		docstring=color.mix(1, string_light, 3, base.withluma(light_luma)),
-		magic=color.mix(1, keyword_light, 2, base.withluma(0.1)),
-		xml_tag=xml_tag_light,
-		xml_attr=xml_attr_light,
-		xml_pi=xml_pi_light,
-		xml_entref=xml_entref.withluma(light_luma).withsat(1.0),
-		ipython_input=ipython_input.withluma(light_luma+0.2).withsat(1.0),
-		ipython_inputnum=ipython_input.withluma(light_luma).withsat(1.0),
-		ipython_output=ipython_output.withluma(light_luma+0.2).withsat(1.0),
-		ipython_outputnum=ipython_output.withluma(light_luma).withsat(1.0),
-	)
+	base_color=base.withlum(0.1),
+	prompt_color=make_light_style(base).rellum(0.5),
+	output_color=make_light_style(base).rellum(0.2),
+	error_color=make_light_style(#f00),
+	comment_color=make_light_style(base),
+	keyword_color=make_light_style(keyword_light),
+	keywordreserved_color=make_light_style(keyword_reserved_light),
+	number_color=make_light_style(number),
+	string_color=string_light,
+	stringfade_color=string_light.rellum(-0.4),
+	date_color=make_light_style(date),
+	color_color=make_light_style(color_),
+	const_color=make_light_style(const),
+	docstring_color=color.mix(1, string_light, 3, make_light_style(base)),
+	magic_color=color.mix(1, make_light_style(keyword_light), 2, base.withlum(0.1)),
+	xml_tag_color=make_light_style(xml_tag),
+	xml_attr_color=make_dark_style(xml_attr).rellum(-0.1).withsat(0.5),
+	xml_pi_color=make_light_style(xml_pi),
+	xml_entref_color=make_light_style(xml_entref),
+	ipython_input_color=make_light_style(ipython_input),
+	ipython_inputnum_color=make_light_style(ipython_input).rellum(-0.2),
+	ipython_output_color=make_light_style(ipython_output),
+	ipython_outputnum_color=make_light_style(ipython_output).rellum(-0.2),
 )?>
 
 
@@ -68,33 +69,31 @@ from pygments import token, style
 	doc="The 'LivingLogic' style, dark version",
 	background_color="#ffffff03",
 	highlight_color="#030",
-	line_number_color=base.withluma(dark_luma-0.2),
+	line_number_color=make_dark_style(base).rellum(-0.2),
 	line_number_background_color="transparent",
-	line_number_special_color=base.withluma(dark_luma-0.1),
+	line_number_special_color=make_dark_style(base).rellum(-0.1),
 	line_number_special_background_color="transparent",
-	styles=dict(
-		base=base.withluma(0.9),
-		prompt=base.withluma(dark_luma-0.3),
-		output=base.withluma(dark_luma-0.1),
-		error=color.css("#f00").withluma(dark_luma),
-		comment=base.withluma(dark_luma),
-		keyword=keyword_dark.withluma(dark_luma),
-		keywordreserved=keyword_reserved_dark,
-		number=number.withluma(dark_luma),
-		string=string_dark,
-		stringfade=string_dark.relluma(0.5),
-		date=date.withluma(dark_luma),
-		color=color_dark,
-		const=const.withluma(dark_luma),
-		docstring=color.mix(1, string_dark, 3, base.withluma(dark_luma)),
-		magic=color.mix(1, keyword_dark, 2, base.withluma(0.9)),
-		xml_tag=xml_tag_dark,
-		xml_attr=xml_attr_dark,
-		xml_pi=xml_pi_dark,
-		xml_entref=xml_entref.withluma(dark_luma),
-		ipython_input=ipython_input.withluma(dark_luma-0.2),
-		ipython_inputnum=ipython_input.withluma(dark_luma),
-		ipython_output=ipython_output.withluma(dark_luma-0.2),
-		ipython_outputnum=ipython_output.withluma(dark_luma),
-	)
+	base_color=base.withlum(0.9),
+	prompt_color=make_dark_style(base).rellum(-0.3),
+	output_color=make_dark_style(base).rellum(-0.1),
+	error_color=make_dark_style(#f00),
+	comment_color=make_dark_style(base),
+	keyword_color=make_dark_style(keyword_dark),
+	keywordreserved_color=make_dark_style(keyword_reserved_dark),
+	number_color=make_dark_style(number),
+	string_color=make_dark_style(string_dark),
+	stringfade_color=make_dark_style(string_dark).rellum(0.5),
+	date_color=make_dark_style(date),
+	color_color=make_dark_style(color_),
+	const_color=make_dark_style(const),
+	docstring_color=color.mix(1, make_dark_style(string_dark), 3, make_dark_style(base)),
+	magic_color=color.mix(1, make_dark_style(keyword_dark), 2, base.withlum(0.9)),
+	xml_tag_color=make_dark_style(xml_tag),
+	xml_attr_color=make_dark_style(xml_attr).rellum(0.1).withsat(0.5),
+	xml_pi_color=make_dark_style(xml_pi),
+	xml_entref_color=make_dark_style(xml_entref),
+	ipython_input_color=make_dark_style(ipython_input),
+	ipython_inputnum_color=make_dark_style(ipython_input).rellum(0.5),
+	ipython_output_color=make_dark_style(ipython_output),
+	ipython_outputnum_color=make_dark_style(ipython_output).rellum(0.5),
 )?>

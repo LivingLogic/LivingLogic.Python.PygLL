@@ -1,0 +1,8 @@
+<?ul4 make_dark_style(color)?>
+<?whitespace strip?>
+<?doc
+	Return a version of the color ``color`` where the luminance has been
+	replaced with one appropriate for text on a dark background.
+?>
+<?code base_lum = 0.7?>
+<?return color.withlum(base_lum)?>

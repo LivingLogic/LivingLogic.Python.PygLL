@@ -1,0 +1,15 @@
+<?ul4 make_light_style(color)?>
+<?whitespace strip?>
+<?doc
+	Return a version of the color ``color`` where the luminance has been
+	replaced with one appropriate for text on a light background.
+
+	We also set the saturation to 1, otherwise the color might not be
+	distinguishable from grey.
+?>
+<?code base_lum = 0.3?>
+<?code color = color.withlum(base_lum)?>
+<?if color.sat()?>
+	<?code color = color.withsat(1.0)?>
+<?end if?>
+<?return color?>

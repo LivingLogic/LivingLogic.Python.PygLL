@@ -13,53 +13,53 @@ class LivingLogicLightStyle(style.Style):
 	highlight_color = '#0f02'
 
 	# line number font color
-	line_number_color = '#7f7f7f'
+	line_number_color = '#6f6f6f'
 
 	# line number background color
 	line_number_background_color = 'transparent'
 
 	# special line number font color
-	line_number_special_color = '#666'
+	line_number_special_color = '#5d5d5d'
 
 	# special line number background color
 	line_number_special_background_color = 'transparent'
 
 	styles = {
 		token.Token:                '#191919',
-		token.Generic.Output:       '#7f7f7f',
-		token.Generic.Prompt:       '#ccc',
+		token.Generic.Output:       '#6f6f6f',
+		token.Generic.Prompt:       '#a5a5a5',
 		token.Generic.Error:        '#ff1c1c',
 		token.Generic.Traceback:    '#ff1c1c',
 		token.Comment:              '#4c4c4c',
-		token.Number:               '#cc00cb',
-		token.String:               '#2b0',
-		token.String.Doc:           '#416739',
-		token.String.Interpol:      '#147000',
-		token.String.Delimiter:     '#147000',
-		token.String.Escape:        '#147000',
-		token.String.Affix:         '#147000',
-		token.Token.Literal.Date:   '#235757',
-		token.Token.Literal.Color:  '#235757',
-		token.Keyword:              '#05f',
-		token.Keyword.Reserved:     '#af0d00',
-		token.Operator:             '#05f',
-		token.Operator.Word:        '#05f',
+		token.Number:               '#e700e6',
+		token.String:               '#0a0',
+		token.String.Doc:           '#396339',
+		token.String.Interpol:      '#060',
+		token.String.Delimiter:     '#060',
+		token.String.Escape:        '#060',
+		token.String.Affix:         '#060',
+		token.Token.Literal.Date:   '#00797a',
+		token.Token.Literal.Color:  '#00797a',
+		token.Keyword:              '#0051f6',
+		token.Keyword.Reserved:     '#a92b00',
+		token.Operator:             '#0051f6',
+		token.Operator.Word:        '#0051f6',
 		token.Keyword.Constant:     '#774600',
 		token.Name:                 '#191919',
 		token.Name.Class:           '#191919 bold',
 		token.Name.Function:        '#191919 bold',
 		token.Name.Namespace:       '#191919',
-		token.Name.Builtin.Pseudo:  '#102d65',
-		token.Name.Variable.Magic:  '#102d65',
-		token.Name.Function.Magic:  '#102d65',
+		token.Name.Builtin.Pseudo:  '#102b62',
+		token.Name.Variable.Magic:  '#102b62',
+		token.Name.Function.Magic:  '#102b62',
 		token.Name.Tag:             '#993d00',
-		token.Name.Attribute:       '#232b0e',
+		token.Name.Attribute:       '#cf9670',
 		token.Name.Entity:          '#e700e6',
 		token.Comment.Preproc:      '#006061',
-		token.Token.Prompt:         '#00b200',
-		token.Token.PromptNum:      '#006a00',
-		token.Token.OutPrompt:      '#ff5d5d',
-		token.Token.OutPromptNum:   '#ff1c1c',
+		token.Token.Prompt:         '#006a00',
+		token.Token.PromptNum:      '#005400',
+		token.Token.OutPrompt:      '#ff1c1c',
+		token.Token.OutPromptNum:   '#cc1616',
 	}
 
 
@@ -75,21 +75,21 @@ class LivingLogicDarkStyle(style.Style):
 	highlight_color = '#030'
 
 	# line number font color
-	line_number_color = '#7f7f7f'
+	line_number_color = '#8e8e8e'
 
 	# line number background color
 	line_number_background_color = 'transparent'
 
 	# special line number font color
-	line_number_special_color = '#999'
+	line_number_special_color = '#a0a0a0'
 
 	# special line number background color
 	line_number_special_background_color = 'transparent'
 
 	styles = {
 		token.Token:                '#e5e5e5',
-		token.Generic.Output:       '#999',
-		token.Generic.Prompt:       '#656565',
+		token.Generic.Output:       '#a0a0a0',
+		token.Generic.Prompt:       '#7c7c7c',
 		token.Generic.Error:        '#ff9d9d',
 		token.Generic.Traceback:    '#ff9d9d',
 		token.Comment:              '#b2b2b2',
@@ -102,10 +102,10 @@ class LivingLogicDarkStyle(style.Style):
 		token.String.Affix:         '#d1e09f',
 		token.Token.Literal.Date:   '#51cccc',
 		token.Token.Literal.Color:  '#51cccc',
-		token.Keyword:              '#80bce2',
-		token.Keyword.Reserved:     '#dfa985',
-		token.Operator:             '#80bce2',
-		token.Operator.Word:        '#80bce2',
+		token.Keyword:              '#7fbce2',
+		token.Keyword.Reserved:     '#dbaa89',
+		token.Operator:             '#7fbce2',
+		token.Operator.Word:        '#7fbce2',
 		token.Keyword.Constant:     '#ffa929',
 		token.Name:                 '#e5e5e5',
 		token.Name.Class:           '#e5e5e5 bold',
@@ -115,11 +115,11 @@ class LivingLogicDarkStyle(style.Style):
 		token.Name.Variable.Magic:  '#c3d7e4',
 		token.Name.Function.Magic:  '#c3d7e4',
 		token.Name.Tag:             '#ffa366',
-		token.Name.Attribute:       '#dac992',
+		token.Name.Attribute:       '#dcb397',
 		token.Name.Entity:          '#eb9beb',
 		token.Comment.Preproc:      '#00e2e2',
-		token.Token.Prompt:         '#00b200',
-		token.Token.PromptNum:      '#00f900',
-		token.Token.OutPrompt:      '#ff5d5d',
-		token.Token.OutPromptNum:   '#ff9d9d',
+		token.Token.Prompt:         '#00f900',
+		token.Token.PromptNum:      '#7ffc7f',
+		token.Token.OutPrompt:      '#ff9d9d',
+		token.Token.OutPromptNum:   '#ffcece',
 	}
