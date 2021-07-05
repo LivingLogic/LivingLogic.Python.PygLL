@@ -1,31 +1,95 @@
 <?whitespace smart?>
 <?doc
-	Creates the Python source code for our Pygments styles.
+	Create the Python source code for our Pygments styles.
 
 	This is done via this UL4 template, so that we can use proper color
 	arithmetic, but the user that installs the style doesn't require an
 	installation of UL4/XIST.
+
+	For more information about XIST and UL4, see http://python.livinglogic.de/,
+	to install XIST/UL4 execute ``pip install ll-xist``.
+
+	The basic approach for defining styles for both dark and light backgrounds
+	is to use the same color for each style, but with a different luminance.
+
+	For dark backgrounds (where the colors are light), this is done by the
+	template ``make_dark_style``.
+
+	For light backgrounds (where the colors are dark), this is done by the
+	template ``make_light_style``. To make the colors more distinguishable
+	from grey the saturation is also increased to 1.
+
+	This means that most styles share one luminance values except for
+	special styles (e.g. escape sequences in strings use the same color as
+	strings but "faded", i.e. with a luminance closed to the text color).
+
+	For some styles (keywords and string constants, which are blue and green)
+	this still gives colors to close to a grey with the same luminance, so
+	we're going to use custom colors here.
 ?>
 from pygments import token, style
 <?code make_dark_style = globals.templates.make_dark_style?>
 <?code make_light_style = globals.templates.make_light_style?>
+<?note
+	The basic text color. This doesn not use the standard luminance, but is
+	nearly black on light backgrounds and nearly white on dark ones.
+?>
 <?code base = #000?>
+<?note
+	Keywords are blue, use custom colors for the light and dark style.
+?>
 <?code keyword_dark = #087fc8?>
 <?code keyword_light = #05f?>
+<?note
+	String constants are green, use custom colors for the light and dark style.
+?>
 <?code string_dark = #a5c341?>
 <?code string_light = #0a0?>
+<?note
+	Numeric contants are purple
+?>
 <?code number = #c0c?>
+<?note
+	Date constants (``@(2000-02-29)``) and color constant (``#fff``) are cyan.
+?>
 <?code date = #6ff?>
 <?code color_ = #6ff?>
+<?note
+	All other constance (``None``, ``True``, ``False`` etc.) are orange.
+?>
 <?code const = #f90?>
+<?note
+	Magic methods etc. (i.e. dunder methods in Python) have a color between
+	normal text and keywords.
+?>
 <?code magic = #009?>
+<?note
+	Prompt colors for interactive IPython console: green for input, red for output.
+?>
 <?code ipython_input = #0f0?>
 <?code ipython_output = #f00?>
+<?note
+	XML/HTML element names are orange
+?>
 <?code xml_tag = #f60?>
+<?note
+	XML/HTML processing instructions are cyan
+?>
 <?code xml_pi = #0ff?>
+<?note
+	XML/HTML attribute names are a mix of the colors for element and string
+	constants
+?>
 <?code xml_attr = color.mix(xml_tag, string)?>
+<?note
+	Reserved keywords use colors between the keyword colors and the color
+	for XML/HTML elements.
+?>
 <?code keyword_reserved_dark = color.mix(keyword_dark, 3, xml_tag)?>
 <?code keyword_reserved_light = color.mix(keyword_light, 3, xml_tag)?>
+<?note
+	XML/HTML entity and character references are purple.
+?>
 <?code xml_entref = #c0c?>
 
 

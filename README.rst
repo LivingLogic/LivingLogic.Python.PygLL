@@ -1,4 +1,4 @@
-Dark and light color styles for Pygments__.
+Pygments__ syntax highlighting styles for dark and light backgrounds
 
 __ https://pygments.org/
 
