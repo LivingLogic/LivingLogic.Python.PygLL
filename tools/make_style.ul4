@@ -34,7 +34,43 @@
 <?whitespace smart?>
 <?doc
 
-	Output a Python class with a complete style definition
+	Output a Python class with a complete Pygments style definition.
+
+	Template areguments are:
+
+	*	``name``: The Python class name;
+	*	``doc``: A docstring for the Python class;
+	*	``background_color``: Background color;
+	*	``highlight_color``: ?
+	*	``line_number_color``: Text color for line numbers;
+	*	``line_number_background_color``: Background color for line numbers;
+	*	``line_number_special_color``: Text color for line numbers in special
+		blocks (``:emphasize-lines:`` in ``.. sourccode`` block);
+	*	``line_number_special_background_color``: Background color for line
+		numbers in special blocks (``:emphasize-lines:`` in ``.. sourccode`` block);
+	*	``base_color``: Color for plain text;
+	*	``prompt_color``: Color for prompts in interactive sessions;
+	*	``output_color``: Color for output in interactive sessions;
+	*	``error_color``: Error color;
+	*	``comment_color``: Color for comments;
+	*	``keyword_color``: Color for keywords;
+	*	``keywordreserved_color``: Color for keywords;
+	*	``number_color``: Color for numberic constants;
+	*	``string_color``: Color for string constance;
+	*	``stringfade_color``: Color for string affixes or escape sequences;
+	*	``date_color``: Color for date constants;
+	*	``color_color``: Color for color constants;
+	*	``const_color``: Color for other constants;
+	*	``docstring_color``: Color for docstrings;
+	*	``magic_color``: Color for magic names (dunder methods in Python);
+	*	``xml_tag_color``: Color for XML/HTML element names;
+	*	``xml_attr_color``: Color for XML/HTML attribute names;
+	*	``xml_pi_color``: Color for XML/HTML processing instructions;
+	*	``xml_entref_color``: Color for XML/HTML entity and character references;
+	*	``ipython_input_color``: Color for IPython input prompt;
+	*	``ipython_inputnum_color``: Color for number in IPython input prompt;
+	*	``ipython_output_color``: Color for IPython output prompt;
+	*	``ipython_outputnum_color``: Color for number in IPython output prompt;
 
 ?>
 class <?print name?>(style.Style):
