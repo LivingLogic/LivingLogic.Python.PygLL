@@ -11,8 +11,12 @@ except ImportError:
 	from distutils import core as tools
 
 
-DESCRIPTION = """
-Pygments style"""
+DESCRIPTION = "Pygments syntax highlighting styles for dark and light backgrounds"
+
+try:
+	LONG_DESCRIPTION = open("README.rst", "r", encoding="utf-8").read().strip()
+except IOError:
+	LONG_DESCRIPTION = None
 
 CLASSIFIERS = """
 Development Status :: 4 - Beta
@@ -40,7 +44,8 @@ except IOError:
 else:
 	# Extract the first section (which are the changes for the current version)
 	underlines = [i for (i, line) in enumerate(news) if line.startswith("---")]
-	news = news[underlines[0]-1:underlines[1]-1]
+	if len(underlines) > 1:
+		news = news[underlines[0]-1:underlines[1]-1]
 	news = "".join(news)
 	description = f"{DESCRIPTION.strip()}\n\n\n{news}"
 
@@ -53,8 +58,8 @@ description = description.expandtabs(2)
 args = dict(
 	name="pygll",
 	version="0.1",
-	description="Pygments style for dark and light backgrounds",
-	long_description=description,
+	description=DESCRIPTION,
+	long_description=LONG_DESCRIPTION,
 	author="Walter Doerwald",
 	author_email="walter@livinglogic.de",
 	url="http://python.livinglogic.de/",
