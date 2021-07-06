@@ -14,12 +14,12 @@ Install with::
 
 After installation, two new styles are available:
 
-==================================== =====================
-Python class                         Style name
-==================================== =====================
-:class:`pygll.LivingLogicLightStyle` ``livinglogic-light``
-:class:`pygll.LivingLogicDarkStyle`  ``livinglogic-dark``
-==================================== =====================
+=============================== =====================
+Python class                    Style name
+=============================== =====================
+``pygll.LivingLogicLightStyle`` ``livinglogic-light``
+``pygll.LivingLogicDarkStyle``  ``livinglogic-dark``
+=============================== =====================
 
 Usage with Sphinx
 -----------------
