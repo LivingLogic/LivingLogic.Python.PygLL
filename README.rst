@@ -4,6 +4,7 @@ __ https://pygments.org/
 
 .. image:: https://github.com/LivingLogic/LivingLogic.Python.PygLL/blob/master/PygLL.png
 
+
 Installation
 ------------
 
@@ -20,6 +21,7 @@ Python class                    Style name
 ``pygll.LivingLogicLightStyle`` ``livinglogic-light``
 ``pygll.LivingLogicDarkStyle``  ``livinglogic-dark``
 =============================== =====================
+
 
 Usage with Sphinx
 -----------------
