@@ -6,7 +6,7 @@ __ https://pygments.org/
 
 
 Installation
-------------
+============
 
 Install with::
 
@@ -24,7 +24,7 @@ Python class                    Style name
 
 
 Usage with Sphinx
------------------
+=================
 
 If you want to use this Pygments style with Sphinx put the following in your
 ``conf.py``::
@@ -33,3 +33,12 @@ If you want to use this Pygments style with Sphinx put the following in your
 
 Whether and how you can specify to use the theme matching the current OS color
 scheme depends on the HTML theme you're using.
+
+
+History
+=======
+
+HEAD (2021-06-??)
+-----------------
+
+Initial release.
