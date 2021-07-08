@@ -13,7 +13,7 @@ Install with::
 	$ pip install pygll
 
 
-After installation, two new styles are available:
+After installation, two new Pygments styles are available:
 
 =============================== =====================
 Python class                    Style name

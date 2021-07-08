@@ -37,23 +37,11 @@ Topic :: Software Development :: Libraries :: Python Modules
 
 KEYWORDS = "syntax highlighting, pygments style"
 
-try:
-	news = list(open("docs/NEWS.rst", "r", encoding="utf-8"))
-except IOError:
-	description = DESCRIPTION.strip()
-else:
-	# Extract the first section (which are the changes for the current version)
-	underlines = [i for (i, line) in enumerate(news) if line.startswith("---")]
-	if len(underlines) > 1:
-		news = news[underlines[0]-1:underlines[1]-1]
-	news = "".join(news)
-	description = f"{DESCRIPTION.strip()}\n\n\n{news}"
-
 # Get rid of text roles PyPI doesn't know about
-description = re.subn(":[a-z]+:`~?([-a-zA-Z0-9_./]+)`", "``\\1``", description)[0]
+DESCRIPTION = re.subn(":[a-z]+:`~?([-a-zA-Z0-9_./]+)`", "``\\1``", DESCRIPTION)[0]
 
 # Expand tabs (so they won't show up as 8 spaces in the Windows installer)
-description = description.expandtabs(2)
+DESCRIPTION = DESCRIPTION.expandtabs(2)
 
 args = dict(
 	name="pygll",
