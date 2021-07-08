@@ -16,7 +16,7 @@ Install with::
 After installation, two new Pygments styles are available:
 
 =============================== =====================
-Python class                    Style name
+Python class                    Plugin name
 =============================== =====================
 ``pygll.LivingLogicLightStyle`` ``livinglogic-light``
 ``pygll.LivingLogicDarkStyle``  ``livinglogic-dark``
