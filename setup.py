@@ -55,7 +55,7 @@ args = dict(
 	license="MIT",
 	classifiers=sorted({c for c in CLASSIFIERS.strip().splitlines() if c.strip() and not c.strip().startswith("#")}),
 	keywords=KEYWORDS,
-	py_modules="pygll",
+	py_modules=["pygll"],
 	package_dir={"": "src"},
 	entry_points={
 		"pygments.styles": [
