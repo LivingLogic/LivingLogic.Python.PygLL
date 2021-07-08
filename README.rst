@@ -31,8 +31,9 @@ If you want to use this Pygments style with Sphinx put the following in your
 
 	pygments_style = 'livinglogic-light'
 
-Whether and how you can specify to use the theme matching the current OS color
-scheme depends on the HTML theme you're using.
+Whether and how you can specify both styles to let the browser automatically
+switch them depending on the current OS color scheme depends on the HTML theme
+you're using.
 
 
 History
