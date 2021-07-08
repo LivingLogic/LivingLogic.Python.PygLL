@@ -90,10 +90,10 @@ class <?print name?>(style.Style):
 	# line number background color
 	line_number_background_color = <?print repr(str(line_number_background_color))?>
 
-	# special line number font color
+	# special line number font color (``:emphasize-lines`` in Sphinx code blocks)
 	line_number_special_color = <?print repr(str(line_number_special_color))?>
 
-	# special line number background color
+	# special line number background color (``:emphasize-lines`` in Sphinx code blocks)
 	line_number_special_background_color = <?print repr(str(line_number_special_background_color))?>
 
 	styles = {
