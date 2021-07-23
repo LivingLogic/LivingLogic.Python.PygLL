@@ -2,7 +2,7 @@ Pygments__ syntax highlighting styles for dark and light backgrounds
 
 __ https://pygments.org/
 
-.. image:: https://github.com/LivingLogic/LivingLogic.Python.PygLL/blob/master/PygLL.png
+.. image:: https://raw.githubusercontent.com/LivingLogic/LivingLogic.Python.PygLL/master/PygLL.png
 
 
 Installation
