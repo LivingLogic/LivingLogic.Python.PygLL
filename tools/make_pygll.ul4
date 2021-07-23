@@ -50,6 +50,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+
 from pygments import token, style
 <?code make_dark_style = globals.templates.make_dark_style?>
 <?code make_light_style = globals.templates.make_light_style?>
